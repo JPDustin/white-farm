@@ -9,7 +9,11 @@ function parallaxScroll() {
   const parallaxElements = document.querySelectorAll(".parallax-bg");
   parallaxElements.forEach((element) => {
     // Skip parallax effect for image-parallax and transition-quote sections
-    if (element.closest(".image-parallax") || element.closest(".transition-quote")) return;
+    if (
+      element.closest(".image-parallax") ||
+      element.closest(".transition-quote")
+    )
+      return;
 
     const speed = element.classList.contains("parallax-slow")
       ? 0.5
@@ -381,39 +385,138 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==========================================
 
 const renoGalleryPhotos = [
-  { src: "assets/photos/reno/original-red-barn.webp", caption: "Original red barn before renovation" },
-  { src: "assets/photos/reno/original-barn-roadside.webp", caption: "Original barn from roadside" },
-  { src: "assets/photos/reno/barn-foundation-winter.webp", caption: "Barn foundation work during winter" },
-  { src: "assets/photos/reno/timber-frame-roof-construction.webp", caption: "Timber frame roof construction" },
-  { src: "assets/photos/reno/addition-framing-exterior.webp", caption: "Framing the new addition" },
-  { src: "assets/photos/reno/covered-porch-timber-frame.webp", caption: "Building the covered porch timber frame" },
-  { src: "assets/photos/reno/porch-timber-frame-fireplace.webp", caption: "Porch timber frame with outdoor fireplace" },
-  { src: "assets/photos/reno/outdoor-fireplace-construction.webp", caption: "Constructing the outdoor fireplace" },
-  { src: "assets/photos/reno/exterior-construction-tyvek-wrap.webp", caption: "Exterior construction with Tyvek wrap" },
-  { src: "assets/photos/reno/completed-porch-stone-pathway.webp", caption: "Completed porch with stone pathway" },
-  { src: "assets/photos/reno/barn-interior-exposed-studs.webp", caption: "Barn interior with exposed studs" },
-  { src: "assets/photos/reno/attic-framing-exposed-beams.webp", caption: "Attic framing with exposed beams" },
-  { src: "assets/photos/reno/radiant-floor-heating.webp", caption: "Installing radiant floor heating system" },
-  { src: "assets/photos/reno/interior-insulation-framing.webp", caption: "Interior insulation and framing work" },
-  { src: "assets/photos/reno/vaulted-ceiling-wood-planks.webp", caption: "Vaulted ceiling with wood planks" },
-  { src: "assets/photos/reno/kitchen-subway-tile-backsplash.webp", caption: "Kitchen subway tile backsplash installation" },
-  { src: "assets/photos/reno/kitchen-island-corrugated-metal.webp", caption: "Kitchen island with corrugated metal accents" },
-  { src: "assets/photos/reno/interior-construction-01.webp", caption: "Interior construction phase 1" },
-  { src: "assets/photos/reno/interior-construction-02.webp", caption: "Interior construction phase 2" },
-  { src: "assets/photos/reno/interior-construction-03.webp", caption: "Interior construction phase 3" },
-  { src: "assets/photos/reno/interior-construction-04.webp", caption: "Interior construction phase 4" },
-  { src: "assets/photos/reno/interior-construction-05.webp", caption: "Interior construction phase 5" },
-  { src: "assets/photos/reno/interior-construction-06.webp", caption: "Interior construction phase 6" },
-  { src: "assets/photos/reno/interior-construction-07.webp", caption: "Interior construction phase 7" },
-  { src: "assets/photos/reno/interior-construction-08.webp", caption: "Interior construction phase 8" },
-  { src: "assets/photos/reno/interior-construction-09.webp", caption: "Interior construction phase 9" },
-  { src: "assets/photos/reno/interior-construction-10.webp", caption: "Interior construction phase 10" },
-  { src: "assets/photos/reno/interior-construction-11.webp", caption: "Interior construction phase 11" },
-  { src: "assets/photos/reno/interior-construction-12.webp", caption: "Interior construction phase 12" },
-  { src: "assets/photos/reno/interior-construction-13.webp", caption: "Interior construction phase 13" },
-  { src: "assets/photos/reno/interior-construction-14.webp", caption: "Interior construction phase 14" },
-  { src: "assets/photos/reno/interior-construction-15.webp", caption: "Interior construction phase 15" },
-  { src: "assets/photos/reno/interior-construction-16.webp", caption: "Interior construction phase 16" }
+  {
+    src: "assets/photos/reno/original-red-barn.webp",
+    caption: "Original red barn before renovation",
+  },
+  {
+    src: "assets/photos/reno/original-barn-roadside.webp",
+    caption: "Original barn from roadside",
+  },
+  {
+    src: "assets/photos/reno/barn-foundation-winter.webp",
+    caption: "Barn foundation work during winter",
+  },
+  {
+    src: "assets/photos/reno/timber-frame-roof-construction.webp",
+    caption: "Timber frame roof construction",
+  },
+  {
+    src: "assets/photos/reno/addition-framing-exterior.webp",
+    caption: "Framing the new addition",
+  },
+  {
+    src: "assets/photos/reno/covered-porch-timber-frame.webp",
+    caption: "Building the outdoor kitchen timber frame",
+  },
+  {
+    src: "assets/photos/reno/porch-timber-frame-fireplace.webp",
+    caption: "Porch timber frame with outdoor fireplace",
+  },
+  {
+    src: "assets/photos/reno/outdoor-fireplace-construction.webp",
+    caption: "Constructing the outdoor fireplace",
+  },
+  {
+    src: "assets/photos/reno/exterior-construction-tyvek-wrap.webp",
+    caption: "Exterior construction",
+  },
+  {
+    src: "assets/photos/reno/completed-porch-stone-pathway.webp",
+    caption: "Completed porch with stone pathway",
+  },
+  {
+    src: "assets/photos/reno/barn-interior-exposed-studs.webp",
+    caption: "Barn interior with exposed studs",
+  },
+  {
+    src: "assets/photos/reno/attic-framing-exposed-beams.webp",
+    caption: "Attic framing with exposed beams",
+  },
+  {
+    src: "assets/photos/reno/radiant-floor-heating.webp",
+    caption: "Installing radiant floor heating system",
+  },
+  {
+    src: "assets/photos/reno/interior-insulation-framing.webp",
+    caption: "Interior insulation and framing work",
+  },
+  {
+    src: "assets/photos/reno/vaulted-ceiling-wood-planks.webp",
+    caption: "Vaulted ceiling with wood planks",
+  },
+  {
+    src: "assets/photos/reno/kitchen-subway-tile-backsplash.webp",
+    caption: "Kitchen subway tile backsplash installation",
+  },
+  {
+    src: "assets/photos/reno/kitchen-island-corrugated-metal.webp",
+    caption: "Kitchen island with corrugated metal accents",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-01.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-02.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-03.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-04.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-05.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-06.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-07.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-08.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-09.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-10.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-11.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-12.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-13.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-14.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-15.webp",
+    caption: "Interior construction phase",
+  },
+  {
+    src: "assets/photos/reno/interior-construction-16.webp",
+    caption: "Interior construction phase",
+  },
 ];
 
 let currentPhotoIndex = 0;
@@ -436,8 +539,9 @@ function updateModalPhoto() {
   const photo = renoGalleryPhotos[currentPhotoIndex];
   document.getElementById("modalImage").src = photo.src;
   document.getElementById("modalCaption").textContent = photo.caption;
-  document.getElementById("modalCounter").textContent =
-    `Photo ${currentPhotoIndex + 1} of ${renoGalleryPhotos.length}`;
+  document.getElementById("modalCounter").textContent = `Photo ${
+    currentPhotoIndex + 1
+  } of ${renoGalleryPhotos.length}`;
 }
 
 function nextPhoto() {
@@ -446,7 +550,9 @@ function nextPhoto() {
 }
 
 function prevPhoto() {
-  currentPhotoIndex = (currentPhotoIndex - 1 + renoGalleryPhotos.length) % renoGalleryPhotos.length;
+  currentPhotoIndex =
+    (currentPhotoIndex - 1 + renoGalleryPhotos.length) %
+    renoGalleryPhotos.length;
   updateModalPhoto();
 }
 

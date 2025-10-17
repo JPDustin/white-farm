@@ -1062,6 +1062,11 @@ footer {
   .photo-featured {
     grid-column: span 1;
   }
+
+  /* Hide left timeline on tablets and mobile */
+  #timeline {
+    display: none !important;
+  }
 }
 
 @media (max-width: 768px) {
