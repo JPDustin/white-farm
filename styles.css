@@ -84,7 +84,7 @@ body {
   color: var(--accent-gold);
   letter-spacing: 1.5px;
   margin-top: 0.2rem;
-  margin-left: 0.6rem; /* ✅ Subtle offset to push subtitle right */
+  margin-left: 0.6rem; /* Subtle offset to push subtitle right */
   text-transform: uppercase;
   font-weight: 500;
   opacity: 0.95; /* keeps it softer visually */
