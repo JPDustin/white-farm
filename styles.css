@@ -1127,6 +1127,11 @@ footer {
   .gallery-subsection-title {
     font-size: 2rem;
   }
+
+  /* Hide left timeline on mobile, keep only top progress bar */
+  #timeline {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {
